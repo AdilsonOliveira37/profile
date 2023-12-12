@@ -1,6 +1,40 @@
+import axios from "axios";
 import Image from "next/image";
 
-export default function Home() {
+const projects = [
+  {
+    id: 1,
+    name: "Same Project",
+    description:
+      "Loren ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae nunc sed velit dignissim lacinia. Nullam in urna quis libero molestie faucibus.",
+  },
+  {
+    id: 2,
+    name: "Same Project",
+    description:
+      "Loren ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae nunc sed velit dignissim lacinia. Nullam in urna quis libero molestie faucibus.",
+  },
+  {
+    id: 3,
+    name: "Same Project",
+    description:
+      "Loren ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae nunc sed velit dignissim lacinia. Nullam in urna quis libero molestie faucibus.",
+  },
+  {
+    id: 4,
+    name: "Same Project",
+    description:
+      "Loren ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae nunc sed velit dignissim lacinia. Nullam in urna quis libero molestie faucibus.",
+  },
+  {
+    id: 5,
+    name: "Same Project",
+    description:
+      "Loren ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae nunc sed velit dignissim lacinia. Nullam in urna quis libero molestie faucibus.",
+  },
+];
+
+export default async function Home() {
   return (
     <main className="w-full max-w-6xl m-auto">
       <section className="flex  items-center gap-8 my-10">
@@ -29,16 +63,28 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center my-12">
         <div className="flex flex-col items-center justify-center">
           <div className="w-80 h-[2px] bg-sky-200 rounded-full"></div>
         </div>
       </div>
 
-      <section className="flex flex-col items-center justify-center h-screen">
+      <section className="flex flex-col items-center justify-center mt-12">
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-4xl font-bold">Projects</h1>
           <p className="text-2xl text-gray-500">Software Engineer</p>
+        </div>
+
+        <div className="w-full flex flex-col items-center justify-center gap-4 mt-8">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="w-full h-40 border flex flex-col p-8 justify-center"
+            >
+              <h1 className="text-2xl font-bold">{project.name}</h1>
+              <p className="text-gray-500">{project.description}</p>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col items-center justify-center">
